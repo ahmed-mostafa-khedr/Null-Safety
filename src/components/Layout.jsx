@@ -46,6 +46,12 @@ const Layout = () => {
     document.body.classList.add("dark-theme");
     document.body.classList.remove("light-theme");
   };
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <>
       <header
@@ -77,11 +83,11 @@ const Layout = () => {
         </div>
         <div className="container">
           <nav className="menu-navbar" id="main-nav">
-            <div className="header-logo">
+            <div className="header-logo" onClick={() => setActive("home")}>
               <NavLink
                 className="logo-link"
                 to="/"
-                onClick={() => setActive("home")}
+                onClick={() => scrollToSection("page-hero")}
                 end
               >
                 <img
@@ -101,16 +107,19 @@ const Layout = () => {
             </div>
             <div className="links menu-wrapper ">
               <ul className="d-flex  list-unstyled ">
-                <li className="nav-item menu-item has-sub-menu">
-                  <Link
+                <li
+                  className="nav-item menu-item has-sub-menu"
+                  onClick={() => setActive("home")}
+                >
+                  <NavLink
                     className={`nav-link menu-link  ${
                       active === "home" ? "active" : ""
                     } `}
                     to="/"
-                    onClick={() => setActive("home")}
+                    onClick={() => scrollToSection("page-hero")}
                   >
                     home
-                  </Link>
+                  </NavLink>
                 </li>
                 <li
                   className="nav-item menu-item"
@@ -129,41 +138,44 @@ const Layout = () => {
                   className="nav-item menu-item"
                   onClick={() => setActive("services")}
                 >
-                  <Nav.Link
-                    className={`nav-link menu-link  ${
+                  <Link
+                    className={`nav-link menu-link navbar-link ${
                       active === "services" ? "active" : ""
                     } `}
-                    href="#services"
+                    to="/"
+                    onClick={() => scrollToSection("services")}
                   >
                     services
-                  </Nav.Link>
+                  </Link>
                 </li>
 
                 <li
                   className="nav-item menu-item"
                   onClick={() => setActive("portfolio")}
                 >
-                  <Nav.Link
-                    className={`nav-link menu-link  ${
+                  <Link
+                    className={`nav-link menu-link navbar-link ${
                       active === "portfolio" ? "active" : ""
                     } `}
-                    href="#portfolio"
+                    to="/"
+                    onClick={() => scrollToSection("portfolio")}
                   >
                     portfolio{" "}
-                  </Nav.Link>
+                  </Link>
                 </li>
                 <li
                   className="nav-item menu-item"
                   onClick={() => setActive("pricing")}
                 >
-                  <Nav.Link
+                  <Link
                     className={`nav-link menu-link  ${
                       active === "pricing" ? "active" : ""
                     } `}
-                    href="#pricing"
+                    to="/"
+                    onClick={() => scrollToSection("pricing")}
                   >
-                    pricing plans{" "}
-                  </Nav.Link>
+                    pricing plans
+                  </Link>
                 </li>
                 <li
                   className="nav-item menu-item"
@@ -173,9 +185,10 @@ const Layout = () => {
                     className={`nav-link menu-link  ${
                       active === "testimonials" ? "active" : ""
                     } `}
-                    href="#testimonials"
+                    to="/"
+                    onClick={() => scrollToSection("testimonials")}
                   >
-                    testimonials{" "}
+                    testimonials
                   </Nav.Link>
                 </li>
                 <li
@@ -440,7 +453,7 @@ const Layout = () => {
             <div className="row">
               <div className="col-12 col-md-6 d-flex justify-content-start">
                 <p className="creadits">
-                  &copy; 2023 Created by:
+                  &copy; 2024 Created by:
                   <a className="link" href="#0">
                     Ahmed Mostafa
                   </a>
