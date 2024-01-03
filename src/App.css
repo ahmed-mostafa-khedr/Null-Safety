@@ -133,3 +133,13 @@ ul.breadcrumb li a:hover {
   left: 0;
   background-color: #0000007b;
 }
+
+.nav-item .nav-link.active {
+  color: #01447e !important;
+  font-weight: 500;
+}
+
+.nav-item .nav-link.focus, .nav-item .nav-link.hover {
+  color: #01447e !important;
+  font-weight: 500;
+}

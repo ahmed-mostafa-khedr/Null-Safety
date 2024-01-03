@@ -100,7 +100,7 @@ const Layout = () => {
               </NavLink>
             </div>
             <div className="links menu-wrapper ">
-              <ul className="list-js links-list">
+              <ul className="d-flex  list-unstyled ">
                 <li className="nav-item menu-item has-sub-menu">
                   <Link
                     className={`nav-link menu-link  ${
@@ -108,7 +108,6 @@ const Layout = () => {
                     } `}
                     to="/"
                     onClick={() => setActive("home")}
-                    end
                   >
                     home
                   </Link>
